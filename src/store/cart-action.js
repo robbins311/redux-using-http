@@ -20,6 +20,7 @@ export const fetchCartData = () => {
       const cartData = await fetchData();
       dispatch(
         cartActions.replaceCart({
+          // cart가 없을때 빈배열로 치환
           items: cartData.items || [],
           totalQuantity: cartData.totalQuantity,
         })
